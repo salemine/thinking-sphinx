@@ -78,7 +78,11 @@ module ThinkingSphinx
     # and parse it according to the current environment.
     #
     def initialize(app_root = Dir.pwd)
-      self.reset
+      if defined?(Sinatra)
+        self.reset(app_root)
+      else
+        self.reset
+      end
     end
 
     def self.configure(&block)
@@ -91,7 +95,6 @@ module ThinkingSphinx
         self.app_root = custom_app_root
       else
         self.app_root   = Merb.root                  if defined?(Merb)
-        self.app_root   = Sinatra::Application.root  if defined?(Sinatra)
         self.app_root   = Rails.root                 if defined?(Rails)
         self.app_root ||= app_root
       end
