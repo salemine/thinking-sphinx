@@ -1,4 +1,4 @@
-h1. Thinking Sphinx 2.0.14
+h1. Thinking Sphinx 2.0.14 Tweaked for Sinatra
 
 Please note: this is the branch for Rails 3. At some point in the near future, it will be released as Thinking Sphinx 2.0. It does not work with versions of Rails before v3 - I'm not sure if that'll happen in the future, but was just too much hassle right now.
 
